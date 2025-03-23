@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: ${{ secrets.DOCKER_USERNAME }}/swapify-frontend:latest
+    container_name: swapify-frontend
+    ports:
+      - "5180:5180"
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - backend
+
+  backend:
+    image: ${{ secrets.DOCKER_USERNAME }}/swapify-backend:latest
+    container_name: swapify-backend
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: production
