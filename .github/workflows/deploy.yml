@@ -1,4 +1,4 @@
-name: Deploy Swapify
+name: Deploy Swapify App
 
 on:
   workflow_dispatch: 
